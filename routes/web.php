@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn() => view('welcome'))->middleware('auth');
 Route::post('/encrypt', [CryptoController::class, 'encrypt'])->name('encrypt');
-Route::post('/decrypt', [CryptoController::class, 'encrypt'])->name('decrypt');
+Route::post('/decrypt', [CryptoController::class, 'decrypt'])->name('decrypt');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
