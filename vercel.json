@@ -1,13 +1,15 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "public/index.php",
-      "use": "@vercel/php",
-      "config": { "includeFiles": ["public/**", "storage/**", "vendor/**"] }
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/public/index.php" }
-  ]
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ],
+  "cleanUrls": true
 }
